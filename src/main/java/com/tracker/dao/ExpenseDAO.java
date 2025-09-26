@@ -9,14 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExpenseDAO {
-    private static final String INSERT_EXPENSE =
-            "INSERT INTO expense (category_id, description, amount, date) VALUES (?, ?, ?, ?)";
-    private static final String GET_ALL_EXPENSES =
-            "SELECT * FROM expense ORDER BY date DESC";
-    private static final String UPDATE_EXPENSE =
-            "UPDATE expense SET category_id = ?, description = ?, amount = ?, date = ? WHERE id = ?";
-    private static final String DELETE_EXPENSE =
-            "DELETE FROM expense WHERE id = ?";
+    private static final String INSERT_EXPENSE ="INSERT INTO expense (category_id, description, amount, date) VALUES (?, ?, ?, ?)";
+    private static final String GET_ALL_EXPENSES ="SELECT * FROM expense ORDER BY date DESC";
+    private static final String UPDATE_EXPENSE ="UPDATE expense SET category_id = ?, description = ?, amount = ?, date = ? WHERE id = ?";
+    private static final String DELETE_EXPENSE ="DELETE FROM expense WHERE id = ?";
 
     public void insertExpense(Expense exp) throws SQLException {
         try (Connection cn = DatabaseConnection.getConnection();
